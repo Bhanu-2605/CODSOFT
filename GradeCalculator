@@ -1,0 +1,49 @@
+import java.util.Scanner;
+class GradeCalculator
+{
+    public static void main(String args[])
+    {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the Marks of the subjects out of 100");
+        System.out.println("Enter subject 1 marks");
+        int s1 = scanner.nextInt();
+        System.out.println("Enter subject 2 marks");
+        int s2 = scanner.nextInt();
+        System.out.println("Enter subject 3 marks");
+        int s3 = scanner.nextInt();
+        System.out.println("Enter subject 4 marks");
+        int s4 = scanner.nextInt();
+        System.out.println("Enter subject 5 marks");
+        int s5 = scanner.nextInt();
+        System.out.println("Enter subject 6 marks");
+        int s6 = scanner.nextInt();
+        
+
+
+
+        int sum = s1+s2+s3+s4+s5+s6 ;
+        int average = sum/6;
+        System.out.println("Subject 1 marks :"+s1);
+        System.out.println("Subject 2 marks :"+s2);
+        System.out.println("Subject 3 marks :"+s3);
+        System.out.println("Subject 4 marks :"+s4);
+        System.out.println("Subject 5 marks :"+s5);
+        System.out.println("Subject 6 marks :"+s6);
+        System.out.println("Sum of subject marks is  :"+sum);
+        System.out.println("Average of marks is :"+average);
+
+        if (s1<40|| s2<40 || s3<40 || s4<40 || s5<40|| s6<40 || average < 40)
+         System.out.println("You failed the exam");
+        else if( 90 <average &&  average < 100)
+         System.out.println("You achieved Outstanding Grade");
+        else if( 80 <average &&  average < 90)
+         System.out.println("You achieved A+ Grade ");
+        else if( 70 <average &&  average < 80)
+         System.out.println("You achieved A Grade");
+        else if(  60 <average &&  average < 70)
+         System.out.println("You Achieved B Grade");
+        else 
+         System.out.println("You Achieved C Grade");
+
+    }
+}
