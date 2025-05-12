@@ -1,0 +1,47 @@
+import java.util.*;
+import java.util.Random;
+class NumberGame
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        Random random = new Random();
+        int randomnumber = random.nextInt(100)+1;
+        int attempts = 0;
+        boolean win = false;
+        while(attempts < 5)
+        {
+         System.out.println("hey user please enter the number :");
+            int usernumber =  sc.nextInt();
+            attempts++;
+            if(randomnumber == usernumber)
+              {
+                  System.out.println("Hooray you won the match");
+                   {
+                       if(attempts ==1)
+                        System.out.println("Your Score is 1001 and you did in attempt 5");
+                       if(attempts ==2)
+                        System.out.println("Your Score is 900 and you did in attempt 2");
+                       if(attempts ==3)
+                        System.out.println("Your Score is 800 and you did in attempt 3");
+                       if(attempts ==4)
+                        System.out.println("Your Score is 700 and you did in attempt 4");
+                       if(attempts ==5)
+                        System.out.println("Your Score is 600 and you did in attempt 5");
+                   }
+                  win = true;
+                  break;
+              }
+            else if (usernumber > randomnumber)
+             System.out.println("Too high");
+            else
+             System.out.println("Too low");
+        }
+        if(win == false)
+         {
+           System.out.println("Sorry mate you have reached maximum attempts try again"); 
+           System.out.println("The correct number was: " + randomnumber);
+         }
+         
+    }
+}
