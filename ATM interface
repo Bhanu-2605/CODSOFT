@@ -1,0 +1,70 @@
+import java.util.*;
+
+class BankBalance {
+    int balance = 100000;  
+}
+
+class ATM extends BankBalance
+{
+    Scanner sc = new Scanner(System.in);
+
+    void withdraw()
+    {
+        System.out.print("Enter amount to withdraw: ");
+        int withdrawAmount = sc.nextInt();
+        if (balance < withdrawAmount) 
+        {
+            System.out.println("Withdraw not possible. Minimum balance required.");
+        } 
+        else
+        {
+            balance -= withdrawAmount;
+            System.out.println("Withdrawal successful. Remaining balance: " + balance);
+        }
+    }
+
+    void deposit()
+    {
+        System.out.print("Enter amount to deposit: ");
+        int depositAmount = sc.nextInt();
+        balance += depositAmount;
+        System.out.println("Bank balance updated successfully. New balance: " + balance);
+    }
+
+    void checkBalance()
+    {
+        System.out.println("Your A/C bank balance is: " + balance);
+    }
+
+    public static void main(String[] args) {
+        ATM atm = new ATM();
+        while (true)
+        {
+            System.out.println("\nEnter the choice of operation:");
+            System.out.println("1. Withdraw");
+            System.out.println("2. Deposit");
+            System.out.println("3. Check Balance");
+            System.out.println("4. Exit");
+            System.out.print("Choice: ");
+            int choice = atm.sc.nextInt();
+
+            switch (choice) 
+            {
+                case 1:
+                    atm.withdraw();
+                    break;
+                case 2:
+                    atm.deposit();
+                    break;
+                case 3:
+                    atm.checkBalance();
+                    break;
+                case 4:
+                    System.out.println("Thank you for using the ATM. Goodbye!");
+                    return;
+                default:
+                    System.out.println("Invalid choice. Try again.");
+            }
+        }
+    }
+}
